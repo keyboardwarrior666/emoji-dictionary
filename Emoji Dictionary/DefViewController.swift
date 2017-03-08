@@ -10,26 +10,20 @@ import UIKit
 
 class DefViewController: UIViewController {
     
-    @IBOutlet weak var emojiLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var catLabel: UILabel!
     @IBOutlet weak var defLavel: UILabel!
-    var emoji = "No emoji"
+    @IBOutlet weak var emojiLabel: UILabel!
+    
+    var emoji = Emoji()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emojiLabel.text = emoji
-        
-        if emoji == "😡" {
-            defLavel.text = "angry"
-        }
-        if emoji == "😵" {
-            defLavel.text = "drunk"
-        }
-        if emoji == "😍" {
-            defLavel.text = "love"
-        }
-
-        
+       emojiLabel.text = emoji.stringEmoji
+        yearLabel.text = "birthyar: \(emoji.birthYear)"
+        catLabel.text = "Catagory : \(emoji.catagory)"
+        defLavel.text = emoji.definition
         
 
         // Do any additional setup after loading the view.
@@ -40,7 +34,8 @@ class DefViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    
 
 
 }
